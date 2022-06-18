@@ -1,0 +1,49 @@
+<mvc:View xmlns:core="sap.ui.core" 
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:f="sap.f"
+          controllerName="mr.employees.controller.Main" 
+          displayBlock="true"
+    >
+
+                <Page showHeader="false">
+
+                    <content>
+                        <f:FlexibleColumnLayout id="fcl" backgroundDesign="Solid" layout="{jsonConfig>/layoutConfig/selected}">
+
+                            <f:beginColumnPages>
+                                
+                                <mvc:XMLView id="masterEmployee" viewName="mr.employees.view.MasterEmployee"/>                                       
+
+
+                            </f:beginColumnPages>
+
+                            <f:midColumnPages>
+
+                                <mvc:XMLView id="deteailsEmployee" viewName="mr.employees.view.EmployeeDetail"/>
+
+                            </f:midColumnPages>
+
+                            <f:endColumnPages>
+                            
+                                <Page >
+
+                                </Page>
+
+                            </f:endColumnPages>
+
+                        </f:FlexibleColumnLayout>
+
+                    </content>
+
+                    <footer>
+                        <Toolbar >
+                            <Select id="slLayout" selectedKey="{jsonConfig>/layoutConfig/selected}" items="{jsonConfig>/layoutConfig/layouts}" forceSelection="false" visible="true" class="sapUiSmallMargin">
+                               
+                                <core:Item key="{jsonConfig>id}" text="{jsonConfig>text}"></core:Item>
+
+                            </Select>                        
+                        </Toolbar>
+                    </footer>
+                </Page>
+</mvc:View>

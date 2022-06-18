@@ -1,0 +1,21 @@
+{       
+        "EmployeeId": "",
+        "CountryId": "",
+        "Countries":[
+            {
+                "id":"USA",
+                "text":"United State"
+            },
+            {
+                "id":"UK",
+                "text":"United Kingdom"
+            },
+            {
+                "id":"ES",
+                "text":"Spain"
+            }
+        ]
+
+
+        
+}

@@ -1,0 +1,41 @@
+<mvc:View xmlns:core="sap.ui.core" 
+          xmlns:mvc="sap.ui.core.mvc"  
+          xmlns="sap.m"
+          controllerName="mr.employees.controller.MasterEmployee" 
+          displayBlock="true">
+   
+    
+    <Page id="page" title="{i18n>title}">
+    
+        <content>
+                    
+            <HBox wrap="Wrap">
+                <Label id="labelEmployee" labelFor="inputEmployee" text="{i18n>labelEmployee}" class="sapUiSmallMargin"/>
+                
+                <Input id="inputEmployee" value="{Countries>/EmployeeId}" maxLength="6" width="200px" class="sapUiSmallMarginEnd" liveChange="onValidate"/>
+                            
+                            
+                <Label id="labelCountry" labelFor="slCountry" text="{i18n>labelCountry}" class="sapUiSmallMargin" visible="false"/>
+                
+                <Select id="slCountry" selectedKey="{Countries>/CountryId}" items="{Countries>/Countries}" forceSelection="false" visible="true" class="sapUiSmallMargin">
+                               
+                    <core:Item key="{Countries>id}" text="{Countries>text}"></core:Item>
+                
+                </Select>
+                
+                
+                <Button text="{i18n>buttonFilter}" press="onFilter" icon="sap-icon://add-filter" class="sapUiSmallMarginEnd"></Button>
+                
+                <Button text="{i18n>buttonClearFilter}" press="onClearFilter" icon="sap-icon://clear-filter" class="sapUiSmallMarginEnd"></Button>
+          
+            </HBox>
+
+            <core:Fragment fragmentName="mr.employees.fragment.TableEmployee" type="XML"/>
+            
+            <HBox id="ordersTable"/>
+
+        </content>
+
+    </Page>
+
+</mvc:View>
